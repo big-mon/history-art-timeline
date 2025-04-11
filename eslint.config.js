@@ -6,20 +6,32 @@ import sveltePlugin from 'eslint-plugin-svelte';
 import prettier from 'eslint-config-prettier';
 
 export default [
+  {
+    languageOptions: {
+      globals: {
+        console: true,
+        document: true
+      }
+    }
+  },
   js.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: './tsconfig.json'
+        project: './tsconfig.json',
+        ecmaVersion: 2020,
+        sourceType: 'module'
       }
     },
     plugins: {
       '@typescript-eslint': tsPlugin
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules
+      ...tsPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-empty-object-type': 'off'
     }
   },
   {
