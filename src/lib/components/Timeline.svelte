@@ -6,95 +6,36 @@
   export let items: TimelineItem[] = [];
 </script>
 
-<div class="timeline-container">
-  <div class="timeline">
+<div class="w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
+  <div class="relative py-8">
+    <!-- timeline vertical line -->
+    <div
+      class="hidden sm:block absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"
+    ></div>
     {#each items as item}
-      <div class="timeline-item" transition:slide={{ duration: 400 }}>
-        <div class="timeline-date">{item.date}</div>
-        <div class="timeline-content">
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
+      <div class="flex flex-col sm:flex-row justify-between mb-8 relative" transition:slide={{ duration: 400 }}>
+        <!-- インジケーター（丸ドット）: sm以上で中央線上に表示 -->
+        <div class="hidden sm:block absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 bg-blue-500 border-4 border-white rounded-full z-20 shadow"></div>
+        <!-- 日付 -->
+        <div class="sm:w-32 text-right sm:pr-8 text-gray-600 flex-shrink-0 mb-2 sm:mb-0">
+          {item.date}
+        </div>
+        <!-- コンテンツカード -->
+        <div
+          class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:ml-8 p-4 bg-white rounded-lg shadow-md"
+        >
+          <h3 class="text-lg sm:text-xl font-medium text-gray-800 mb-2">{item.title}</h3>
+          <p class="text-gray-600 mb-4">{item.description}</p>
           {#if item.image}
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={item.title} class="w-full rounded-md mb-4" />
           {/if}
           {#if item.category}
-            <span class="category">{item.category}</span>
+            <span class="inline-block px-2 py-1 bg-gray-100 rounded text-sm text-gray-600"
+              >{item.category}</span
+            >
           {/if}
         </div>
       </div>
     {/each}
   </div>
 </div>
-
-<style>
-  .timeline-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .timeline {
-    position: relative;
-    padding: 2rem 0;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: #e0e0e0;
-  }
-
-  .timeline-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-
-  .timeline-date {
-    width: 120px;
-    text-align: right;
-    padding-right: 2rem;
-    color: #666;
-  }
-
-  .timeline-content {
-    flex: 1;
-    max-width: calc(50% - 60px);
-    margin-left: 2rem;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .timeline-content h3 {
-    margin: 0 0 0.5rem;
-    color: #333;
-  }
-
-  .timeline-content p {
-    margin: 0 0 1rem;
-    color: #666;
-  }
-
-  .timeline-content img {
-    max-width: 100%;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-  }
-
-  .category {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    background: #f0f0f0;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    color: #666;
-  }
-</style>
