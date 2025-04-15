@@ -28,7 +28,7 @@ export const timelineData: TimelineItem[] = [
       'パブロ・ピカソによるスペイン内戦をテーマにした大作。現在はソフィア王妃芸術センターに所蔵。',
     category: '絵画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/PicassoGuernica.jpg/800px-PicassoGuernica.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/7/74/PicassoGuernica.jpg',
     era: 'その他'
   },
   {
@@ -38,7 +38,7 @@ export const timelineData: TimelineItem[] = [
       'ジョットによるイタリア初期ルネサンスの代表的な壁画。パドヴァのスクロヴェーニ礼拝堂に現存。',
     category: '壁画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Giotto_-_Scrovegni_Chapel_-_Padua_Italy.jpg/800px-Giotto_-_Scrovegni_Chapel_-_Padua_Italy.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/2/2b/Giotto_-_Scrovegni_Chapel_-_Padua_Italy_-_interior_view.jpg',
     era: 'ルネサンス'
   },
   {
@@ -48,7 +48,7 @@ export const timelineData: TimelineItem[] = [
       'クロード・モネによる印象派の代表作。フランスのマルモッタン美術館に所蔵。',
     category: '絵画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6d/Claude_Monet_-_Impression%2C_Sunrise.jpg',
     era: 'その他'
   }
   ,
