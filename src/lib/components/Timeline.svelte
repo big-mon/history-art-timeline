@@ -1,6 +1,7 @@
 <!-- Timeline.svelte -->
 <script lang="ts">
   import type { TimelineItem } from '../types/timeline';
+  import { slide } from 'svelte/transition';
 
   export let items: TimelineItem[] = [];
 </script>
@@ -8,7 +9,7 @@
 <div class="timeline-container">
   <div class="timeline">
     {#each items as item}
-      <div class="timeline-item">
+      <div class="timeline-item" transition:slide={{ duration: 400 }}>
         <div class="timeline-date">{item.date}</div>
         <div class="timeline-content">
           <h3>{item.title}</h3>
