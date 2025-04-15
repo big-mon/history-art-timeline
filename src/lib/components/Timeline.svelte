@@ -1,6 +1,7 @@
 <!-- Timeline.svelte -->
 <script lang="ts">
   import type { TimelineItem } from '../types/timeline';
+  import { slide } from 'svelte/transition';
 
   export let items: TimelineItem[] = [];
 </script>
@@ -12,7 +13,7 @@
       class="hidden sm:block absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"
     ></div>
     {#each items as item}
-      <div class="flex flex-col sm:flex-row justify-between mb-8 relative">
+      <div class="flex flex-col sm:flex-row justify-between mb-8 relative" transition:slide={{ duration: 400 }}>
         <!-- インジケーター（丸ドット）: sm以上で中央線上に表示 -->
         <div class="hidden sm:block absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 bg-blue-500 border-4 border-white rounded-full z-20 shadow"></div>
         <!-- 日付 -->
