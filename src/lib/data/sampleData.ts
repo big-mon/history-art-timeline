@@ -51,4 +51,26 @@ export const timelineData: TimelineItem[] = [
       'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
     era: 'その他'
   }
+  ,
+  {
+    date: '1789',
+    title: 'フランス革命勃発',
+    description: 'フランスで市民革命が始まり、絶対王政が終焉した。ヨーロッパ史に大きな影響を与えた。',
+    category: '歴史',
+    era: 'その他'
+  },
+  {
+    date: '1969',
+    title: 'アポロ11号月面着陸',
+    description: 'アメリカの宇宙船アポロ11号が人類初の月面着陸を達成。ニール・アームストロング船長が「これは一人の人間にとっては小さな一歩だが、人類にとっては大きな飛躍である」と語った。',
+    category: '歴史',
+    era: 'その他'
+  },
+  {
+    date: '1945',
+    title: '第二次世界大戦終結',
+    description: '連合国と枢軸国の間で行われた世界規模の戦争が終結。国際連合の設立など、戦後の国際秩序に大きな影響を与えた。',
+    category: '歴史',
+    era: 'その他'
+  }
 ];
