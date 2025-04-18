@@ -4,5 +4,6 @@ export interface TimelineItem {
   description: string;
   category?: string;
   image?: string;
+  credit?: string;
   era?: string;
 }

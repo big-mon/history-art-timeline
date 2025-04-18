@@ -112,6 +112,9 @@
                 {#if item.image}
                   <img src={item.image} alt={item.title} class="w-full rounded-md mb-4" />
                 {/if}
+                {#if item.credit}
+                  <p class="text-xs text-gray-500 mb-4">{item.credit}</p>
+                {/if}
                 {#if item.category}
                   <span class="inline-block px-2 py-1 bg-gray-100 rounded text-sm text-gray-600"
                     >{item.category}</span
@@ -138,6 +141,9 @@
                 {/if}
                 {#if item.image}
                   <img src={item.image} alt={item.title} class="w-full rounded-md mb-4" />
+                {/if}
+                {#if item.credit}
+                  <p class="text-xs text-gray-500 mb-4">{item.credit}</p>
                 {/if}
                 {#if item.category}
                   <span class="inline-block px-2 py-1 bg-gray-100 rounded text-sm text-gray-600"
