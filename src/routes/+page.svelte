@@ -7,5 +7,5 @@
   <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center py-8">
     芸術作品の歴史タイムライン
   </h1>
-  <Timeline items={timelineData} />
+  <Timeline items={timelineData} filterEra="ルネサンス" />
 </main>

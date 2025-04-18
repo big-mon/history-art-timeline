@@ -12,12 +12,16 @@
   }
 
   export let items: TimelineItem[] = [];
+  // フェーズ1-2: 特定時代フィルタ（デフォルト：ルネサンス）
+  export let filterEra: string = 'ルネサンス';
+  let filteredItems: TimelineItem[] = [];
+  $: filteredItems = items.filter(item => item.era === filterEra);
 
   // eraごとにグループ化
   $: grouped = (() => {
-    if (!items || items.length === 0) return [];
+    if (!filteredItems || filteredItems.length === 0) return [];
     const map = new Map<string, TimelineItem[]>();
-    for (const item of items) {
+    for (const item of filteredItems) {
       const era = item.era || 'その他';
       if (!map.has(era)) map.set(era, []);
       map.get(era)?.push(item);
