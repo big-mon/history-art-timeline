@@ -57,18 +57,14 @@
     const onScroll = () => {
       if (!eraRefs || eraRefs.length === 0) return;
       const center = window.innerHeight * 0.35;
-      const visible = eraRefs
-        .map((el, idx) => ({
-          era: grouped[idx]?.era ?? 'その他',
-          top: el?.getBoundingClientRect().top ?? Infinity
-        }))
-        .filter(({ top }) => top < center && top > 0);
-      if (visible.length > 0) {
-        visible.sort((a, b) => a.top - b.top);
-        currentEra = visible[0].era;
-      } else {
-        currentEra = grouped[0]?.era ?? 'その他';
-      }
+      const distances = eraRefs.map((el, idx) => {
+        const top = el?.getBoundingClientRect().top ?? Infinity;
+        return { era: grouped[idx]?.era ?? 'その他', top };
+      });
+      const closest = distances.reduce((prev, curr) =>
+        Math.abs(curr.top - center) < Math.abs(prev.top - center) ? curr : prev
+      , distances[0]);
+      currentEra = closest.era;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -77,6 +73,16 @@
 </script>
 
 <div class={`w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-8 transition-colors duration-500 ${eraBgMap[currentEra] || 'bg-gray-50'}`}>  
+  <!-- 画面端タイムラインインジケーター -->
+  <div class="hidden sm:block fixed right-0 top-1/2 transform -translate-y-1/2 pr-4 pointer-events-none">
+    <ul class="flex flex-col space-y-2">
+      {#each grouped as grp}
+        <li class="transition-transform duration-300 {currentEra === grp.era ? 'text-blue-700 font-bold scale-110' : 'text-gray-400'}">
+          {grp.era}
+        </li>
+      {/each}
+    </ul>
+  </div>
   <div class="relative py-8">
     <!-- timeline vertical line -->
     <div
