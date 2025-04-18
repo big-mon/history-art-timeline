@@ -11,9 +11,13 @@ export default [
   },
   {
     languageOptions: {
+      env: { browser: true },
       globals: {
         console: true,
-        document: true
+        document: true,
+        window: true,
+        HTMLElement: true,
+        IntersectionObserver: true
       }
     }
   },

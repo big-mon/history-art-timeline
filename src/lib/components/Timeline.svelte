@@ -12,10 +12,14 @@
   }
 
   export let items: TimelineItem[] = [];
-  // フェーズ1-2: 特定時代フィルタ（デフォルト：ルネサンス）
-  export let filterEra: string = 'ルネサンス';
+  // フェーズ2-1: 年代範囲フィルタ（例：476年〜1600年）
+  export let startYear: number = 476;
+  export let endYear: number = 1600;
   let filteredItems: TimelineItem[] = [];
-  $: filteredItems = items.filter(item => item.era === filterEra);
+  $: filteredItems = items.filter(item => {
+    const year = parseInt(item.date, 10);
+    return !isNaN(year) && year >= startYear && year <= endYear;
+  });
 
   // eraごとにグループ化
   $: grouped = (() => {
@@ -31,6 +35,7 @@
 
   // 背景色マップ（必要に応じて追加・変更可）
   const eraBgMap: Record<string, string> = {
+    '中世': 'bg-green-50',
     'ルネサンス': 'bg-blue-50',
     'ポスト印象派': 'bg-yellow-50',
     'その他': 'bg-gray-50',
