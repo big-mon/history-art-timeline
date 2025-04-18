@@ -166,5 +166,12 @@ export const timelineData: TimelineItem[] = [
     description: '二月革命と十月革命によりロシア帝政が崩壊し、ソビエト政権が成立。',
     category: '歴史',
     era: 'その他'
+  },
+  {
+    date: '476',
+    title: '西ローマ帝国滅亡',
+    description: '西ローマ帝国が滅亡し、西ヨーロッパは中世に入る。',
+    category: '歴史',
+    era: '中世'
   }
 ];
