@@ -44,6 +44,9 @@
   let visibility: boolean[][] = [];
   $: visibility = grouped.map(g => g.items.map(() => false));
 
+  let expanded: boolean[][] = [];
+  $: expanded = grouped.map(g => g.items.map(() => false));
+
   onMount(() => {
     if (typeof window === 'undefined') return;
     const onScroll = () => {
@@ -99,10 +102,13 @@
               </div>
               <!-- コンテンツカード（左側） -->
               <div
-                class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:mr-8 p-4 bg-white rounded-lg shadow-md"
+                class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:mr-8 p-4 bg-white rounded-lg shadow-md cursor-pointer"
+                on:click={() => expanded[i][j] = !expanded[i][j]}
               >
                 <h3 class="text-lg sm:text-xl font-medium text-gray-800 mb-2">{item.title}</h3>
-                <p class="text-gray-600 mb-4">{item.description}</p>
+                {#if expanded[i][j]}
+                  <p class="text-gray-600 mb-4">{item.description}</p>
+                {/if}
                 {#if item.image}
                   <img src={item.image} alt={item.title} class="w-full rounded-md mb-4" />
                 {/if}
@@ -123,10 +129,13 @@
               </div>
               <!-- コンテンツカード（右側） -->
               <div
-                class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:ml-8 p-4 bg-white rounded-lg shadow-md"
+                class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:ml-8 p-4 bg-white rounded-lg shadow-md cursor-pointer"
+                on:click={() => expanded[i][j] = !expanded[i][j]}
               >
                 <h3 class="text-lg sm:text-xl font-medium text-gray-800 mb-2">{item.title}</h3>
-                <p class="text-gray-600 mb-4">{item.description}</p>
+                {#if expanded[i][j]}
+                  <p class="text-gray-600 mb-4">{item.description}</p>
+                {/if}
                 {#if item.image}
                   <img src={item.image} alt={item.title} class="w-full rounded-md mb-4" />
                 {/if}
