@@ -15,7 +15,7 @@
   // フェーズ1-2: 特定時代フィルタ（デフォルト：ルネサンス）
   export let filterEra: string = 'ルネサンス';
   let filteredItems: TimelineItem[] = [];
-  $: filteredItems = items.filter(item => item.era === filterEra);
+  $: filteredItems = items.filter(item => item.era === filterEra).sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
 
   // eraごとにグループ化
   $: grouped = (() => {
