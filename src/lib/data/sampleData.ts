@@ -72,5 +72,21 @@ export const timelineData: TimelineItem[] = [
     description: '連合国と枢軸国の間で行われた世界規模の戦争が終結。国際連合の設立など、戦後の国際秩序に大きな影響を与えた。',
     category: '歴史',
     era: 'その他'
+  },
+  {
+    date: '1498',
+    title: '最後の晩餐',
+    description: 'レオナルド・ダ・ヴィンチによる壁画。サンタ・マリア・デッレ・グラツィエ教会にあり、宗教画の傑作として知られる。',
+    category: '絵画',
+    image: 'https://artmuseum.jpn.org/image483.jpg',
+    era: 'ルネサンス'
+  },
+  {
+    date: '1504',
+    title: 'ダビデ像',
+    description: 'ミケランジェロによる大理石の彫刻。フィレンツェのアカデミア美術館に展示されている。',
+    category: '彫刻',
+    image: 'https://artmuseum.jpn.org/image483.jpg',
+    era: 'ルネサンス'
   }
 ];
