@@ -9,6 +9,7 @@ export const timelineData: TimelineItem[] = [
     category: '絵画',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+    credit: 'Wikimedia Commons (Public Domain)',
     era: 'ルネサンス'
   },
   {
@@ -19,6 +20,7 @@ export const timelineData: TimelineItem[] = [
     category: '絵画',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg',
+    credit: 'Wikimedia Commons (Public Domain)',
     era: 'ポスト印象派'
   },
   {
@@ -29,6 +31,7 @@ export const timelineData: TimelineItem[] = [
     category: '絵画',
     image:
       'https://isaosato.net/wp-content/uploads/2021/02/GUERNICA.jpg',
+    credit: 'Museo Reina Sofía (Public Domain)',
     era: 'その他'
   },
   {
@@ -39,6 +42,7 @@ export const timelineData: TimelineItem[] = [
     category: '壁画',
     image:
       'https://worldheritage-mania.com/wp-content/uploads/2022/06/shutterstock_1302522964-1.jpg',
+    credit: '世界遺産マニア (Public Domain)',
     era: 'ルネサンス'
   },
   {
@@ -49,6 +53,7 @@ export const timelineData: TimelineItem[] = [
     category: '絵画',
     image:
       'https://artmuseum.jpn.org/image483.jpg',
+    credit: 'ArtMuseum.jp (要著作権確認)',
     era: 'その他'
   }
   ,
@@ -79,6 +84,7 @@ export const timelineData: TimelineItem[] = [
     description: 'レオナルド・ダ・ヴィンチによる壁画。サンタ・マリア・デッレ・グラツィエ教会にあり、宗教画の傑作として知られる。',
     category: '絵画',
     image: 'https://artmuseum.jpn.org/image483.jpg',
+    credit: 'ArtMuseum.jp (要著作権確認)',
     era: 'ルネサンス'
   },
   {
@@ -87,6 +93,7 @@ export const timelineData: TimelineItem[] = [
     description: 'ミケランジェロによる大理石の彫刻。フィレンツェのアカデミア美術館に展示されている。',
     category: '彫刻',
     image: 'https://artmuseum.jpn.org/image483.jpg',
+    credit: 'ArtMuseum.jp (要著作権確認)',
     era: 'ルネサンス'
   },
   // ルネサンス期の歴史イベント
