@@ -102,6 +102,9 @@
               </div>
               <!-- コンテンツカード（左側） -->
               <div
+                role="button"
+                tabindex="0"
+                on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expanded[i][j] = !expanded[i][j]; } }}
                 class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:mr-8 p-4 bg-white rounded-lg shadow-md cursor-pointer"
                 on:click={() => expanded[i][j] = !expanded[i][j]}
               >
@@ -132,6 +135,9 @@
               </div>
               <!-- コンテンツカード（右側） -->
               <div
+                role="button"
+                tabindex="0"
+                on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expanded[i][j] = !expanded[i][j]; } }}
                 class="flex-1 max-w-full sm:max-w-[calc(50%-4rem)] sm:ml-8 p-4 bg-white rounded-lg shadow-md cursor-pointer"
                 on:click={() => expanded[i][j] = !expanded[i][j]}
               >
