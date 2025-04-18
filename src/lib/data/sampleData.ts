@@ -28,7 +28,7 @@ export const timelineData: TimelineItem[] = [
       'パブロ・ピカソによるスペイン内戦をテーマにした大作。現在はソフィア王妃芸術センターに所蔵。',
     category: '絵画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/7/74/PicassoGuernica.jpg',
+      'https://isaosato.net/wp-content/uploads/2021/02/GUERNICA.jpg',
     era: 'その他'
   },
   {
@@ -38,7 +38,7 @@ export const timelineData: TimelineItem[] = [
       'ジョットによるイタリア初期ルネサンスの代表的な壁画。パドヴァのスクロヴェーニ礼拝堂に現存。',
     category: '壁画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/2/2b/Giotto_-_Scrovegni_Chapel_-_Padua_Italy_-_interior_view.jpg',
+      'https://worldheritage-mania.com/wp-content/uploads/2022/06/shutterstock_1302522964-1.jpg',
     era: 'ルネサンス'
   },
   {
@@ -48,7 +48,7 @@ export const timelineData: TimelineItem[] = [
       'クロード・モネによる印象派の代表作。フランスのマルモッタン美術館に所蔵。',
     category: '絵画',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/6/6d/Claude_Monet_-_Impression%2C_Sunrise.jpg',
+      'https://artmuseum.jpn.org/image483.jpg',
     era: 'その他'
   }
   ,
