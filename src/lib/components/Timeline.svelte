@@ -19,7 +19,7 @@
   $: filteredItems = items.filter(item => {
     const year = parseInt(item.date, 10);
     return !isNaN(year) && year >= startYear && year <= endYear;
-  });
+  }).sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
 
   // eraごとにグループ化
   $: grouped = (() => {
@@ -101,8 +101,8 @@
             <div class="flex flex-col sm:flex-row-reverse justify-between mb-8 relative" in:slide={{ duration: 400 }}>
               <!-- インジケーター（丸ドット）: sm以上で中央線上に表示 -->
               <div class="hidden sm:block absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 bg-blue-500 border-4 border-white rounded-full z-20 shadow"></div>
-              <!-- 日付（左側） -->
-              <div class="sm:w-32 text-left sm:pl-8 text-gray-600 flex-shrink-0 mb-2 sm:mb-0">
+              <!-- 日付（中央表示） -->
+              <div class="hidden sm:block absolute left-1/2 top-6 translate-y-6 -translate-x-1/2 text-gray-600 text-sm font-medium z-20">
                 {item.date}
               </div>
               <!-- コンテンツカード（左側） -->
@@ -134,8 +134,8 @@
             <div class="flex flex-col sm:flex-row justify-between mb-8 relative" in:slide={{ duration: 400 }}>
               <!-- インジケーター（丸ドット）: sm以上で中央線上に表示 -->
               <div class="hidden sm:block absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 bg-blue-500 border-4 border-white rounded-full z-20 shadow"></div>
-              <!-- 日付（右側） -->
-              <div class="sm:w-32 text-right sm:pr-8 text-gray-600 flex-shrink-0 mb-2 sm:mb-0">
+              <!-- 日付（中央表示） -->
+              <div class="hidden sm:block absolute left-1/2 top-6 translate-y-6 -translate-x-1/2 text-gray-600 text-sm font-medium z-20">
                 {item.date}
               </div>
               <!-- コンテンツカード（右側） -->
